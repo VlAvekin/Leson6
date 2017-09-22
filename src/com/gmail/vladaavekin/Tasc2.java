@@ -10,30 +10,42 @@ import java.util.Scanner;
 
 public class Tasc2 {
 
+
+    // Расчет валют
+    // 1 - Перевод с курса в курс
+
+    public static int currency = 0;
+    public static double money = 0d;
+    public static String[] val = {"ГРН", "USD", "EUR"};
+
+    public static double USD = 26.08;
+    public static double EUR = 30.92;
+
+
+    private static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
+        System.out.println("( ГРН = 1; USD = 2; EUR = 3 )");
 
-        System.out.print("Введите сумму в грн: ");
-        double out = scanner.nextDouble();
-        System.out.print("Введите валюту (USD, EUR, RUB) :");
-        int valute = scanner.nextInt();
+        currency = scanner.nextInt();
 
-        System.out.println(Sum(out, valute));
+        System.out.print("Сумма ");
+        money = scanner.nextDouble();
 
-    }
-
-    public static double Sum(double out, int valute){
-
-        double USD = 26;
-        double EUR = 30.7;
-        double RUB = 0.45;
-
-        if (valute == 1) out = out / USD;
-        else if (valute == 2) out  = out / EUR;
-        else if (valute == 3)  out = out / RUB;
-
-        return out;
+        if (currency == 1){
+            System.out.println("ГРН " + money);
+            System.out.println("USD " + (money / USD) );
+            System.out.println("EUR " + (money / EUR));
+        } else if (currency == 2){
+            System.out.println("ГРН " + (money / ( 1 / USD ) ) );
+            System.out.println("USD " + (money) );
+            System.out.println("EUR " + (money / (money / (money / ( 1 / USD ) ) * EUR)) );
+        } else if (currency == 3){
+            System.out.println("ГРН " + (money / ( 1 / EUR ) ));
+            System.out.println("USD " + ( money / (money / (money / ( 1 / EUR ) ) * USD)));
+            System.out.println("EUR " + money);
+        }
     }
 
 }

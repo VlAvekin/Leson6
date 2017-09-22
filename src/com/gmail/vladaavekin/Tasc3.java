@@ -24,32 +24,32 @@ public class Tasc3 {
         int out = scanner.nextInt();
 
         // 1
-        if ((out >> 31) == 0) System.out.print("введенное число положительным!");
-        else System.out.print("введенное число отрицательным!");
+        if ((out >> 31) == 0) System.out.println("введенное число положительным!");
+        else System.out.println("введенное число отрицательным!");
 
         // 2
-        System.out.println();
-        for (int i = 1; i < out; i++) {
-            if ((out >> 31) == 0) {
+        int num;
+        boolean isPrime;
 
-                if (i % 1 == 0) {
-                    if (i % i == 0){
-                        //System.out.println(i);
-                    }
-                }
+        num = out;
 
+        if(num < 2) isPrime = false;
+        else isPrime = true;
+
+        for (int i = 2; i <= num / i; i++) {
+
+            if ((num % i) == 0) {
+                isPrime = false;
+                break;
             }
         }
+
+        if (isPrime) System.out.println("Пpocтoe число");
+        else System.out.println("He простое число");
 
         // 3
         System.out.println();
-        for (int i = 0; i < out*out; i++) {
 
-            if ((i % 2) == 0 && (i % 3) == 0 && (i % 5) == 0 && (i % 6) == 0 && (i % 9) == 0) {
-                System.out.println(i);
-            }
-
-        }
 
     }
 

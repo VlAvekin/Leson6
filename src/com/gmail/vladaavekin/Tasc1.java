@@ -23,11 +23,10 @@ public class Tasc1 {
     public static void main(String[] args) {
 
 
-
         double pla = 100;
         int plate = 7;
         double dolg = pla * plate;
-
+        //System.out.println("Догр за кредит = " + dolg);
         System.out.println(Sum(plate, dolg));
 
 
@@ -35,14 +34,12 @@ public class Tasc1 {
 
     private static double Sum(final int plate, final double dolg) {
 
-
         for (int i = 0; i < plate; i++) {
             System.out.format("Взнос %d: ", i+1);
             double a = scanner.nextDouble();
             sum += a;
 
             if (sum == dolg) {
-                sum += a;
                 return sum;
             }
         }
